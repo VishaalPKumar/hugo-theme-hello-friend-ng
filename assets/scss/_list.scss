@@ -153,6 +153,14 @@
 .resume {
   width: 60%;
 
+  .section-header {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0px;
+    font-size: 2em; /* Adjust font size as needed */
+    font-weight: semibold;
+  }
+
   .work-experience {
     display: flex;
     flex-direction: column;
@@ -200,8 +208,16 @@
   }
 
   .tech-stack-tag {
-    background-color: #e0e0e0; /* Background color for the tags */
-    color: #333; /* Text color */
+    [data-theme=dark] & {
+      background-color: #333; /* Dark mode background color */
+      color: #fff; /* Dark mode text color */
+    }
+
+    [data-theme=light] & {
+      background-color: #e0e0e0; /* Light mode background color */
+      color: #333; /* Light mode text color */
+    }
+
     padding: 5px 10px; /* Padding inside the tags */
     border-radius: 15px; /* Rounded corners for the tags */
     font-size: 12px; /* Adjust font size as needed */
@@ -209,8 +225,16 @@
   }
 
   .tech-stack-tag:hover {
-    background-color: #333; /* Background color on hover */
-    color: #fff; /* Text color on hover */
+    [data-theme=dark] & {
+      background-color: #666; /* Dark mode background color on hover */
+      color: #fff; /* Dark mode text color on hover */
+    }
+
+    [data-theme=light] & {
+      background-color: #333; /* Light mode background color on hover */
+      color: #fff; /* Light mode text color on hover */
+    }
+
     transform: scale(1.1); /* Slightly enlarge the tag on hover */
   }
 
@@ -220,10 +244,60 @@
     margin-left: 10px;
     margin-top: 5px;
   }
+
+  .education-header {
+    display: flex;
+    margin-bottom: 0;
+  }
+  .education-degree {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+    .degree-header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: last baseline;
+    }
+    .degree {
+      // bold and underline
+      font-weight: bold;
+    }    
+  }
+
+    .awards-header {
+      font-weight: bold;
+    }
+
+    .awards-list {
+      align-items: start;
+      text-align: start;
+    }
+  
+
+    .activities-header {
+      font-weight: bold;
+    }
+
+    .activities-list {
+      align-items: start;
+      text-align: start;
+    }
+
+    td {
+      text-align: left;
+      vertical-align: top;
+      padding-right: 10px;
+    }
   
 }
 
 .projects {
+  max-width: 1500px;
   width: 80%;
   margin: 0 auto;
 
