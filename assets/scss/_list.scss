@@ -82,6 +82,103 @@
       @include dimmed;
     }
   }
+  .triple {
+    display: flex;
+    flex-wrap: wrap;
+    .col {
+      @media (prefers-color-scheme: dark) {
+        background-color: $dark-background-secondary;
+      }
+      [data-theme=dark] & {
+        background-color: $dark-background-secondary;
+      }
+      @media (prefers-color-scheme: light) {
+        background-color: $light-background-secondary;
+      }
+      [data-theme=light] & {
+        background-color: $light-background-secondary;
+      }
+  
+      flex: 1;
+      padding: 0.5rem;
+      margin: 0 0.2rem;
+      border-radius: 0.5rem;
+  
+      .card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.25rem; 
+        // box-shadow: 0px 5px 3px #e5e8eb;
+        padding: 0.5rem;
+  
+        @media (prefers-color-scheme: dark) {
+          background-color: $dark-table-color;
+        }
+        [data-theme=dark] & {
+          background-color: $dark-table-color;
+        }
+        @media (prefers-color-scheme: light) {
+          background-color: $light-background-header;
+        }
+        [data-theme=light] & {
+          background-color: $light-background-header;
+        }
+  
+        & > * {
+          margin: 0.2rem 0;
+        }
+  
+        &:hover {
+          @media (prefers-color-scheme: dark) {
+            background-color: $dark-background-header;
+          }
+          [data-theme=dark] & {
+            background-color: $dark-background-header;
+          }
+          @media (prefers-color-scheme: light) {
+            background-color: $light-table-color;
+          }
+          [data-theme=light] & {
+            background-color: $light-table-color;
+          }
+        }
+  
+        .date-badge {
+          // background-color: #f2f3f4;
+          @media (prefers-color-scheme: dark) {
+            background-color: $dark-background-header;
+          }
+          [data-theme=dark] & {
+            background-color: $dark-background-header;
+          }
+          @media (prefers-color-scheme: light) {
+            background-color: $light-table-color;
+          }
+          [data-theme=light] & {
+            background-color: $light-table-color;
+          }
+          width: fit-content;
+          padding: 0.1rem 0.2rem;
+          font-size: 0.75rem;
+          border-radius: 2px;
+        }
+  
+        .category-container {
+          display: flex;
+          flex-direction: row;
+          font-size: 0.65rem;
+  
+          .category-badge {
+            background-color: grey;
+            color: white;
+            padding: 0.1rem 0.5rem;
+            border-radius: 0.5rem;
+            margin-right: 0.2rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 .destinations {
@@ -148,8 +245,6 @@
   transform: translateY(0); /* Slide in from the bottom on hover */
 }
 
-
-
 .resume {
   width: 60%;
 
@@ -166,7 +261,7 @@
     flex-direction: column;
     align-items: start;
   }
-
+  
   .work-experience-header {
     display: flex;
     justify-content: space-between;
@@ -373,7 +468,5 @@
         background-color: $light-background-secondary; /* Light mode background color on hover */
       }
     }
-
   }
-
 }
